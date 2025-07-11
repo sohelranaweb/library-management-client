@@ -10,6 +10,7 @@ import {
 import EditBookModal from "./EditBookModal";
 import BorrowBookModal from "./BorrowBookModal";
 import BookDelete from "./BookDelete";
+import BookDetailModal from "./BookDetailModal";
 
 export interface Book {
   _id: string;
@@ -67,6 +68,7 @@ export function BookTable({ data }: BookTableProps) {
 
                 <BookDelete bookId={book._id}></BookDelete>
                 <BorrowBookModal book={book._id}></BorrowBookModal>
+                <BookDetailModal bookId={book._id}></BookDetailModal>
               </TableCell>
             </TableRow>
           ))}
