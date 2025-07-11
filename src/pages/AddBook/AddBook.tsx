@@ -52,8 +52,8 @@ const AddBook = () => {
 
   const onSubmit: SubmitHandler<BookFormValues> = async (data) => {
     try {
-      const res = await addBook(data).unwrap();
-      console.log("RTK query", res);
+      await addBook(data).unwrap();
+      // console.log("RTK query", res);
       toast.success("Book added successfully.");
       form.reset();
       navigate("/books");
