@@ -68,7 +68,7 @@ const EditBookModal = ({ bookId }: EditBookModalProps) => {
     }
   }, [book, form]);
   const onSubmit = async (data: BookFormValues) => {
-    console.log("✅ Submitted updated book:", data);
+    // console.log("✅ Submitted updated book:", data);
     // You can call updateBook mutation here
     try {
       const updatedBook = {
@@ -78,13 +78,13 @@ const EditBookModal = ({ bookId }: EditBookModalProps) => {
           available: data.copies > 0, // ✅ copies > 0 হলে available true
         },
       };
-      const res = await updateBook(updatedBook).unwrap();
+      await updateBook(updatedBook).unwrap();
       toast.success("Book updated successfully");
-      console.log("✅ Book updated successfully", res);
+      // console.log("✅ Book updated successfully", res);
       setOpen(false);
     } catch (error) {
       toast.error("Failed to update book");
-      console.error("❌ Failed to update book", error);
+      // console.error("❌ Failed to update book", error);
     }
   };
 
